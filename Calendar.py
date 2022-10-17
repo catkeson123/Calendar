@@ -88,9 +88,6 @@ class MyCalendar():
 
 
 # In[35]:
-
-
-# functions for actions to perform on the calculator 
 yearcalendar = []
 
 year = int(input('What year would you like to use for your calendar? '))
@@ -101,6 +98,7 @@ for x in range(1,13):
 
 active = True
 
+# functions for actions to perform on the calculator 
 # schedule recurring events
 def schedulerecur(yearcalendar, month, event, is_time, time = None):
     freq = input('Would you like to schedule this event daily(enter d) or weekly(enter w)? ')
@@ -224,8 +222,9 @@ def search(yearcalendar):
                     for event in week:
                         daynum = week.index(event)
                         if searchevent == ''.join(event):
+                            month = calend.month
                             found = True
-                            print('Event Found on ' + Months[calend.month] + ' ' + str(calend.cal[weeknum][daynum]))
+                            print('Event Found on ' + Months(month).name + ' ' + str(calend.cal[weeknum][daynum]))
 
             if not found:
                 print('Could not find event in calendar') 
